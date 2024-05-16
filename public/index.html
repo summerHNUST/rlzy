@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= webpackConfig.name %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= webpackConfig.name %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+
+  <script>
+    //递归求数字各个位数上的数字的和
+    function getEachNumSum(x){
+                if(x < 10){
+                    return x;
+                }
+                return (x%10) + getEachNumSum(parseInt(x/10));
+            }
+            console.log(getEachNumSum(126));
+
+  </script>
+
+  <script>
+  //   let arr=[2,3,6,1]
+  //  let sum= arr.reduce((item,cur)=>{
+  //     return item+cur
+  //   },8)
+  //   console.log(sum);
+  </script>
+
+<script>
+  let result = [
+      {
+          subject: 'math',
+          score: 10
+      },
+      {
+          subject: 'chinese',
+          score: 20
+      },
+      {
+          subject: 'english',
+          score: 30
+      }
+  ];
+
+  // var sum = result.reduce(function (prev, cur) {
+  //     return cur.score + prev;
+  // }, 0);
+  // console.log(sum) //60
+
+  // let s = result.reduce((pre,cur)=>{
+  //   return pre + cur.score
+  // },6)
+  // console.log(s);
+
+  let Person=function(name,age){
+    this.name=name
+    this.age=age
+  }
+  let me = new Person('小刘',20)
+  console.log(me);
+
+
+  // 1. 定时器回调，使用作用域this
+// 2. 从数组中返回偶数元素
+let arr = [1, 5, 6, 7, 652];
+let result1 = arr.filter((item) => item % 2 === 0);
+console.log(result1);
+
+
+
+</script>
+
+<script>
+  const arrList=[12,34,565,12,111,6,8,6]
+  const newArr=[]
+  arrList.forEach((item)=>{
+    if(newArr.indexOf(item)===-1){
+      newArr.push(item)
+
+    }
+  })
+  console.log(newArr);
+</script>
+</html>
+
+
