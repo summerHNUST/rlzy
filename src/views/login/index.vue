@@ -62,7 +62,7 @@
 
       <div class="tips">
         <span style="margin-right: 20px">账号: 13800000002</span>
-        <span> 密码: 123456</span>
+        <span> 密码: 888itcast.CN764%...</span>
       </div>
     </el-form>
   </div>
@@ -92,8 +92,8 @@ export default {
     return {
       loginForm: {
         mobile: "13800000002",
-       // password: "hm#qd@23!",
-       password:'888itcast.CN764%...'
+        // password: "hm#qd@23!",
+        password: "888itcast.CN764%...",
       },
       loginRules: {
         mobile: [
@@ -140,25 +140,28 @@ export default {
       });
     },
     handleLogin() {
-      this.$refs.loginForm.validate((valid) => {
-        if (!valid) return;
-        this.doLogin()
+      this.$refs.loginForm.validate(async(valid) => {
+        if (!valid) return;  
+        this.doLogin();
+        
       });
     },
     async doLogin() {
       try {
-       //const { data: res } = await login(this.loginForm);
-       //this.$store.commit('user/updateToken',res.data)
-      
-      const res= await this.$store.dispatch('user/userLogin',this.loginForm)
-       this.$message.success(res.message)
-      // this.$message.success("登录成功!!!")
-       //跳转到首页
-      this.$router.push(this.$route.query.redirect || '/')
+        //const { data: res } = await login(this.loginForm);
+        //this.$store.commit('user/updateToken',res.data)
 
-     } catch (e) {
-        //console.log('登录失败-----',e);
-        this.$message.error(e.message)
+        const res = await this.$store.dispatch(
+          "user/userLogin",
+          this.loginForm
+        );
+        this.$message.success(res.message);
+        // this.$message.success("登录成功!!!")
+        //跳转到首页
+        this.$router.push(this.$route.query.redirect || "/");
+      } catch (e) {
+       // console.log('登录失败-----',e);
+        this.$message.error(e.message);
       }
     },
   },
@@ -213,14 +216,16 @@ $cursor: #fff;
   }
 
   .loginBtn {
-    background: #407ffe;
+    background: hotpink;
     height: 66px;
     line-height: 33px;
     font-size: 24px;
     font-weight: bold;
+    border: none !important;
+    // box-shadow: none !important;
   }
   .el-form-item__error {
-    color: #f02f6f;
+    color: blue;
   }
 }
 </style>

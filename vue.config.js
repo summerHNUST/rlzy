@@ -38,8 +38,9 @@ module.exports = {
       // change xxx-api/login => mock/login
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       '/api': {
-        target: 'https://heimahr.itheima.net',
-        //target:'http://ihrm-java.itheima.net',
+       // target: 'https://heimahr.itheima.net',
+       // target:'http://ihrm-java.itheima.net',  
+       target:'http://localhost:3000',
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''

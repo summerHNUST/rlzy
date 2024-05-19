@@ -1,5 +1,9 @@
 import request from '@/utils/request'
-
+/**
+ * 
+ * @param {Object} data  登录需要的参数对象
+ * @returns 返回的结果 
+ */
 export function login(data) {
     return request({
         method:'post',
@@ -11,7 +15,7 @@ export function login(data) {
 
 export function getUserInfo() {
     return request({
-       // method:'post',
+        method:'post',
         url:'/sys/profile'
     })
  
